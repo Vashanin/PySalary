@@ -1,7 +1,8 @@
 import sqlite3 as sqlite
 
-class Post:
-    def __init__(self, table="Posts", database="templates/db/database.db"):
+
+class Table:
+    def __init__(self, table="Tables", database="templates/db/database.db"):
         self.table = table
         self.database = database
 
@@ -11,9 +12,7 @@ class Post:
 
         with db:
             conn = db.cursor()
-
             conn.execute("SELECT * FROM {}".format(self.table))
-
             data = conn.fetchall()
 
             return data

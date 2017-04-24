@@ -2,6 +2,10 @@
 
 {% block body %}
 
+    {% if (error != None):%}
+        <div class="alert alert-danger" role="alert"> {{error}} </div>
+    {% endif %}
+
     <div class="panel panel-default" style="max-width: 90%; margin: auto;">
     <!-- Default panel contents -->
         <div class="panel-heading">Перелік посад</div>

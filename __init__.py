@@ -1,4 +1,6 @@
 from Post import *
+from Table import *
+from Employee import *
 
 from flask import Flask, render_template
 
@@ -10,22 +12,32 @@ def homepage():
 
 @app.route('/employees/')
 def employees():
-    return render_template("employees.html")
+    try:
+        employee = Employee()
+        EMPLOYEES_DATA = employee.get_all_db_data()
+        return render_template("employees.html", EMPLOYEES_DATA=EMPLOYEES_DATA, error=None)
+    except Exception as e:
+        return render_template("employees.html", error="Exception has been caught: " + e.args[0])
+
 
 @app.route('/posts/')
 def posts():
-    POSTS_DATA = []
     try:
         post = Post()
         POSTS_DATA = post.get_all_db_data()
+        return render_template("posts.html", POSTS_DATA=POSTS_DATA, error=None)
     except Exception as e:
-        print("Exception inside posts(): " + e.args[0])
+        return render_template("posts.html", error="Exception has been caught: " + e.args[0])
 
-    return render_template("posts.html", POSTS_DATA = POSTS_DATA)
 
 @app.route("/tables/")
 def tables():
-    return render_template("tables.html")
+    try:
+        table = Table()
+        TABLES_DATA = table.get_all_db_data()
+        return render_template("tables.html", TABLES_DATA=TABLES_DATA, error=None)
+    except Exception as e:
+        return render_template("tables.html", error="Exception has been caught: " + e.args[0])
 
 @app.route("/salaries/")
 def salaries():
