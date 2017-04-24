@@ -2,6 +2,27 @@
 
 {% block body %}
 
-    <p> Here must be posts table </p>
+    <div class="panel panel-default" style="max-width: 90%; margin: auto;">
+    <!-- Default panel contents -->
+        <div class="panel-heading">Перелік посад</div>
+
+    <!-- Table -->
+        <table class="table">
+            <thead>
+                <th> # </th>
+                <th> Назва посади </th>
+                <th> Зарплата в USD/годину </th>
+            </thead>
+            <tbody>
+                {% for item in POSTS_DATA:%}
+                <tr>
+                    <td> {{item["id"]}} </td>
+                    <td> {{item["name"]}} </td>
+                    <td> {{item["salaryPerHour"]}} </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
 {% endblock %}
