@@ -1,3 +1,5 @@
+from Post import *
+
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -12,7 +14,14 @@ def employees():
 
 @app.route('/posts/')
 def posts():
-    return render_template("posts.html")
+    POSTS_DATA = []
+    try:
+        post = Post()
+        POSTS_DATA = post.get_all_db_data()
+    except Exception as e:
+        print("Exception inside posts(): " + e.args[0])
+
+    return render_template("posts.html", POSTS_DATA = POSTS_DATA)
 
 @app.route("/tables/")
 def tables():
@@ -24,7 +33,7 @@ def salaries():
 
 @app.route("/new-table/")
 def new_table():
-    return("Here must be adding form")
+    return render_template("new-table.html")
 
 if __name__ == "__main__":
     app.run()
