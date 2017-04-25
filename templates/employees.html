@@ -49,16 +49,12 @@
 
         <div class="input-group" style="margin: 20px 50px; width: 1000px;">
             <span class="input-group-addon" id="basic-addon1"> Ідентифікатор </span>
-            <select type="text" class="form-control" value="request.form.id"
+            <select type="text" class="form-control"
                     aria-describedby="basic-addon1" name="id" value="{{request.form.id}}">
                 {% for employee in EMPLOYEES_DATA%}
                 <option value="{{employee['id']}}">{{employee["id"]}}</option>
                 {% endfor %}
             </select>
-        </div>
-
-        <div class="alert alert-success" role="alert" style="margin-left:50px; width: 800px;">
-            Якщо ви обрали опцію "редагувати", то залишивши одне з наступних полей вільним - змін відбуватися не буде
         </div>
 
         <div class="input-group" style="margin: 20px 50px; width: 1000px;">

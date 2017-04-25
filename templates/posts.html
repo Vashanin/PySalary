@@ -29,4 +29,44 @@
         </table>
     </div>
 
+    <form method="POST" action="/posts-handler/">
+
+        <div class="alert alert-info" role="alert" style="margin:100px 50px 20px 50px; width: 800px;">
+            Обрана дія в першу чергу буде прив'язана до ідентифікатора! (якщо це не додавання)
+        </div>
+
+        <div class="input-group" style="margin: 20px 50px; width: 1000px;">
+            <span class="input-group-addon" id="basic-addon1"> Оберіть одну з трьох дій: </span>
+            <select type="text" class="form-control"
+                    aria-describedby="basic-addon1" name="action" value="{{request.form.action}}">
+                <option value="add">Додати</option>
+                <option value="edit">Редагувати</option>
+                <option value="remove">Видалити</option>
+            </select>
+        </div>
+
+        <div class="input-group" style="margin: 20px 50px; width: 1000px;">
+            <span class="input-group-addon" id="basic-addon1"> Ідентифікатор </span>
+            <select type="text" class="form-control"
+                    aria-describedby="basic-addon1" name="id" value="{{request.form.id}}">
+                {% for post in POSTS_DATA%}
+                <option value="{{post['id']}}">{{post["id"]}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="input-group" style="margin: 20px 50px; width: 1000px;">
+            <span class="input-group-addon" id="basic-addon1"> Назва посади </span>
+            <input type="text" class="form-control"
+                    aria-describedby="basic-addon1" name="name" value="{{request.form.name}}">
+        </div>
+
+
+        <div class="input-group" style="margin: 20px 50px; width: 1000px;">
+            <span class="input-group-addon" id="basic-addon1"> USD/годину </span>
+            <input type="text" class="form-control"
+                    aria-describedby="basic-addon1" name="salary" value="{{request.form.salary}}">
+        </div>
+        <button type="submit" class="btn btn-default" style="margin-left: 915px;"> Підтвердити ввід </button>
+    </form>
 {% endblock %}

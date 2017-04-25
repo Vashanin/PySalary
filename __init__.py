@@ -98,6 +98,23 @@ def employees_handler():
 
     return redirect(url_for("employees"))
 
+@app.route("/posts-handler/", methods=["POST", "GET"])
+def posts_handler():
+    if request.method == "POST":
+        action = request.form["action"]
+        id = request.form["id"]
+        name = request.form["name"]
+        salary = request.form["salary"]
+
+        if (action == "add"):
+            Post().add_new_post(name, salary)
+        if (action == "remove"):
+            Post().remove_post(id)
+        if (action == "edit"):
+            Post().change_post(id, name, salary)
+
+    return redirect(url_for("posts"))
+
 @app.route("/new-table/")
 def new_table():
     try:
