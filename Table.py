@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*
 
 import sqlite3 as sqlite
-
+from Employee import Employee
 
 class Table:
     """
@@ -89,4 +89,31 @@ class Table:
             db.commit()
 
     def add_to_db(self, name, month, year, hours):
-        return None
+        try:
+            db = sqlite.connect(self.database)
+            with db:
+                conn = db.cursor()
+                id = 1
+                try:
+                    conn.execute("SELECT MAX(id) FROM {}".format(self.table))
+                    db.commit()
+
+                    max_id = conn.fetchall()
+                    id = max_id[0][0] + 1
+                except Exception as e:
+                    print("Inserting into empty table: " + self.table + " new index equals " + str(id))
+
+                employees = Employee().get_all_db_data()
+                employeeId = 0
+                for employee in employees:
+                    if name == employee["name"]:
+                        employeeId = employee["id"]
+
+                new_table = (id, employeeId, month, year, hours)
+
+                conn.execute(
+                    "INSERT INTO {} (id, employeeId, month, year, hours) VALUES (?,?,?,?,?)".format(self.table), new_table
+                )
+
+        except Exception as e:
+            print("Troubles with add_commodity_to_db: " + e.args[0])

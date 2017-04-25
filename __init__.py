@@ -69,19 +69,16 @@ def salaries():
 """
 @app.route("/handler/", methods=["POST", "GET"])
 def handler():
-    try:
-        if request.method == "POST":
-            name = request.form("employee_name")
-            month = request.form("month")
-            year = request.form("year")
-            hours = request.form("hours")
+    if request.method == "POST":
+        name = request.form["employee_name"]
+        month = request.form["month"]
+        year = request.form["year"]
+        hours = request.form["hours"]
 
-            Table().add_to_db(name, month, year, hours)
+        Table().add_to_db(name, month, year, hours)
 
-        return redirect(url_for("new-table"))
-    except Exception as e:
-        print("Exception has been caught: " + e.args[0])
-        return redirect(url_for("new-table"))
+    return redirect(url_for("new_table"))
+
 
 @app.route("/new-table/")
 def new_table():
