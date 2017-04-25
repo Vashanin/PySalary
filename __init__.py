@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*
+
 from Post import *
 from Table import *
 from Employee import *
@@ -44,7 +46,23 @@ def tables():
 def salaries():
     return render_template("salaries.html")
 
-@app.route("/new-table/", methods=["POST"])
+@app.route("/handler/", methods=["POST", "GET"])
+def handler():
+    try:
+        if request.method == "POST":
+            name = request.form("employee_name")
+            month = request.form("month")
+            year = request.form("year")
+            hours = request.form("hours")
+
+            Table().add_to_db(name, month, year, hours)
+
+        return redirect(url_for("new-table"))
+    except Exception as e:
+        print("Exception has been caught: " + e.args[0])
+        return redirect(url_for("new-table"))
+
+@app.route("/new-table/")
 def new_table():
     try:
         EMPLOYEES_DATA = Employee().get_all_db_data()

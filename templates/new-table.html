@@ -3,6 +3,10 @@
 {% block body %}
 
     {% if (error != None):%}
+        <div class="alert alert-info" role="alert">{{message}}</div>
+    {% endif %}
+
+    {% if (error != None):%}
         <div class="alert alert-danger" role="alert"> {{error}} </div>
     {% endif %}
 
@@ -10,12 +14,12 @@
         <h1 style="margin-left: 50px;"><small>Заповнення табеля</small></h1>
     </div>
 
-    <form method="POST" action="/new-table/">
-        <div class="input-group" style="margin: 20px 50px; width: 750px;">
+    <form method="POST" action="/handler/">
+        <div class="input-group" style="margin: 20px 50px; width: 1000px;">
             <span class="input-group-addon" id="basic-addon1"> Оберіть ПІБ працівника </span>
             <select type="text" class="form-control"
                     aria-describedby="basic-addon1"
-                    name="employee_name">
+                    name="employee_name" value="{{request.form.employee_name}}">
                 {% for employee in EMPLOYEES_DATA %}
                 <option>
                     {{employee["name"]}}
@@ -23,11 +27,11 @@
                 {% endfor %}
             </select>
         </div>
-        <div class="input-group" style="margin: 20px 50px; width: 750px;">
+        <div class="input-group" style="margin: 20px 50px; width: 1000px;">
             <span class="input-group-addon" id="basic-addon1"> Місяць для заповнення </span>
             <select type="text" class="form-control"
                     aria-describedby="basic-addon1"
-                    name="month">
+                    name="month" value="{{request.form.month}}">
                 <option value="12"> Грудень </option>
                 <option value="1"> Січень </option>
                 <option value="2"> Лютий </option>
@@ -43,21 +47,21 @@
             </select>
         </div>
 
-        <div class="input-group" style="margin: 20px 50px; width: 750px;">
+        <div class="input-group" style="margin: 20px 50px; width: 1000px;">
             <span class="input-group-addon" id="basic-addon1"> Рік </span>
             <input type="number" class="form-control"
                     aria-describedby="basic-addon1"
-                    name="year">
+                    name="year" value="{{request.form.year}}">
             </input>
         </div>
 
-        <div class="input-group" style="margin: 20px 50px; width: 750px;">
+        <div class="input-group" style="margin: 20px 50px; width: 1000px;">
             <span class="input-group-addon" id="basic-addon1"> К-ть відроблених годин(через пробіл)</span>
             <input type="text" class="form-control"
                     aria-describedby="basic-addon1"
-                    name="hours">
+                    name="hours" value="{{request.form.hours}}">
             </input>
         </div>
-        <button type="submit" class="btn btn-default" style="margin-left: 665px;"> Підтвердити ввід </button>
+        <button type="submit" class="btn btn-default" style="margin-left: 915px;"> Підтвердити ввід </button>
     </form>
 {% endblock%}

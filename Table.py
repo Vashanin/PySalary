@@ -80,3 +80,6 @@ class Table:
 
             conn.executemany("INSERT INTO {} (id, employeeId, month, year, hours) VALUES (?, ?, ?, ?, ?)".format(self.table), tables)
             db.commit()
+
+    def add_to_db(self, name, month, year, hours):
+        return None
