@@ -116,7 +116,37 @@ class Employee:
             print(e.args)
 
     def change_employee(self, id, name, post, rate):
-        return None
+        try:
+            db = sqlite.connect(self.database)
+            with db:
+                conn = db.cursor()
+
+                print(id)
+                print(name)
+                print(post)
+                print(rate)
+
+                conn.execute("SELECT * FROM {} WHERE id={}".format(self.table, id))
+
+                responce = conn.fetchall()
+                print(responce)
+
+                if (len(name) == 0):
+                    name = u"{}".format(responce[0][1])
+
+                if (len(post) == 0):
+                    post = u"{}".format(responce[0][2])
+
+                if (len(rate) == 0):
+                    rate = u"{}".format(responce[0][3])
+    
+                conn.execute(
+                    "UPDATE {} SET name = '{}', post = '{}', rate = u'{}' WHERE id = "
+                        .format(u"{}".format(self.table), u"{}".format(name), u"{}".format(post), u"{}".format(rate), u"{}".format(id))
+                )
+        except Exception as e:
+            print("Troubles with edit_commodity_in_db: " + e.args[0])
+
 
     # функція init_table в проекті не використовується, але вона дозволяє перезаписати таблицю з БД з деякими початковими записами
     def init_table(self):
