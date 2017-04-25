@@ -31,4 +31,61 @@
         </table>
     </div>
 
+    <form action="/employees-handler/" method="POST">
+
+        <div class="alert alert-info" role="alert" style="margin:100px 50px 20px 50px; width: 800px;">
+            Обрана дія в першу чергу буде прив'язана до ідентифікатора! (якщо це не додавання)
+        </div>
+
+        <div class="input-group" style="margin: 20px 50px; width: 1000px;">
+            <span class="input-group-addon" id="basic-addon1"> Оберіть одну з трьох дій: </span>
+            <select type="text" class="form-control"
+                    aria-describedby="basic-addon1" name="action" value="{{request.form.action}}">
+                <option value="add">Додати</option>
+                <option value="edit">Редагувати</option>
+                <option value="remove">Видалити</option>
+            </select>
+        </div>
+
+        <div class="input-group" style="margin: 20px 50px; width: 1000px;">
+            <span class="input-group-addon" id="basic-addon1"> Ідентифікатор </span>
+            <select type="text" class="form-control" name="name" value="request.form.id"
+                    aria-describedby="basic-addon1" name="employee_name" value="{{request.form.id}}">
+                {% for employee in EMPLOYEES_DATA%}
+                <option value="{{employee['id']}}">{{employee["id"]}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="alert alert-success" role="alert" style="margin-left:50px; width: 800px;">
+            Якщо ви обрали опцію "редагувати", то залишивши одне з наступних полей вільним - змін відбуватися не буде
+        </div>
+
+        <div class="input-group" style="margin: 20px 50px; width: 1000px;">
+            <span class="input-group-addon" id="basic-addon1"> ПІБ </span>
+            <input type="text" class="form-control"
+                    aria-describedby="basic-addon1" name="employee_name" value="{{request.form.employee_name}}">
+        </div>
+
+
+        <div class="input-group" style="margin: 20px 50px; width: 1000px;">
+            <span class="input-group-addon" id="basic-addon1"> Посада </span>
+            <select type="text" class="form-control"
+                    aria-describedby="basic-addon1" name="post" value="{{request.form.post}}">
+                <option value=""></option>
+                {% for post in POSTS_DATA%}
+                <option value='{{post["name"]}}'>{{post["name"]}}</option>
+                {% endfor%}
+            </select>
+        </div>
+
+        <div class="input-group" style="margin: 20px 50px; width: 1000px;">
+            <span class="input-group-addon" id="basic-addon1"> Ставка </span>
+            <input type="text" class="form-control"
+                    aria-describedby="basic-addon1" name="rate" value="{{request.form.rate}}">
+        </div>
+
+        <button type="submit" class="btn btn-default" style="margin-left: 915px;"> Підтвердити ввід </button>
+    </form>
+
 {% endblock%}

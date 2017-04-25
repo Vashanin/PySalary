@@ -81,6 +81,43 @@ class Employee:
 
         return response
 
+    def add_new_employee(self, name, post, rate):
+        try:
+            db = sqlite.connect(self.database)
+            with db:
+                conn = db.cursor()
+                id = 1
+                try:
+                    conn.execute("SELECT MAX(id) FROM {}".format(self.table))
+                    db.commit()
+
+                    max_id = conn.fetchall()
+                    id = max_id[0][0] + 1
+                except Exception as e:
+                    print("Inserting into empty table: " + self.table + " new index equals " + str(id))
+
+                employee = (id, name, post, rate)
+
+                conn.execute(
+                    "INSERT INTO {} (id, name, post, rate) VALUES (?,?,?,?)".format(self.table), employee
+                )
+
+        except Exception as e:
+            print("Troubles with add_commodity_to_db: " + e.args[0])
+
+
+    def remove_employee(self, id):
+        try:
+            db = sqlite.connect(self.database)
+            with db:
+                conn = db.cursor()
+                conn.execute("DELETE FROM {} WHERE id={}".format(self.table, id))
+        except Exception as e:
+            print(e.args)
+
+    def edit_employee(self, id, name, post, rate):
+        return None
+
     # функція init_table в проекті не використовується, але вона дозволяє перезаписати таблицю з БД з деякими початковими записами
     def init_table(self):
         db = sqlite.connect(self.database)
