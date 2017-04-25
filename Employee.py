@@ -115,7 +115,7 @@ class Employee:
         except Exception as e:
             print(e.args)
 
-    def edit_employee(self, id, name, post, rate):
+    def change_employee(self, id, name, post, rate):
         return None
 
     # функція init_table в проекті не використовується, але вона дозволяє перезаписати таблицю з БД з деякими початковими записами

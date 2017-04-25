@@ -88,11 +88,12 @@ def employees_handler():
         name = request.form["name"]
         post = request.form["post"]
         rate = request.form["rate"]
+
         if (action == "add"):
             Employee().add_new_employee(name, post, rate)
         if (action == "remove"):
             Employee().remove_employee(id)
-        id (action == "change"):
+        if (action == "edit"):
             Employee().change_employee(id, name, post, rate)
 
     return redirect(url_for("employees"))

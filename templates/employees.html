@@ -31,7 +31,7 @@
         </table>
     </div>
 
-    <form action="/employees-handler/" method="POST">
+    <form method="POST" action="/employees-handler/">
 
         <div class="alert alert-info" role="alert" style="margin:100px 50px 20px 50px; width: 800px;">
             Обрана дія в першу чергу буде прив'язана до ідентифікатора! (якщо це не додавання)
@@ -49,8 +49,8 @@
 
         <div class="input-group" style="margin: 20px 50px; width: 1000px;">
             <span class="input-group-addon" id="basic-addon1"> Ідентифікатор </span>
-            <select type="text" class="form-control" name="name" value="request.form.id"
-                    aria-describedby="basic-addon1" name="employee_name" value="{{request.form.id}}">
+            <select type="text" class="form-control" value="request.form.id"
+                    aria-describedby="basic-addon1" name="id" value="{{request.form.id}}">
                 {% for employee in EMPLOYEES_DATA%}
                 <option value="{{employee['id']}}">{{employee["id"]}}</option>
                 {% endfor %}
@@ -64,7 +64,7 @@
         <div class="input-group" style="margin: 20px 50px; width: 1000px;">
             <span class="input-group-addon" id="basic-addon1"> ПІБ </span>
             <input type="text" class="form-control"
-                    aria-describedby="basic-addon1" name="employee_name" value="{{request.form.employee_name}}">
+                    aria-describedby="basic-addon1" name="name" value="{{request.form.name}}">
         </div>
 
 
