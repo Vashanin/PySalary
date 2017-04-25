@@ -81,16 +81,21 @@ class Employee:
         with db:
             conn = db.cursor()
             employees = (
-                (1, u"Анакинов Владислав Петрович", "HR"),
-                (2, u"Голованов Сергй Дмитрович", "Team Lead"),
-                (3, u"Адамовський Анатолій Ростиславович", "Software Tester"),
-                (4, u"Куршаков Дмитро Владиславович", "Middle Python Developer")
+                (1, u"Анакинов Владислав Петрович", "HR", 120),
+                (2, u"Голованов Сергей Дмитрович", "Team Lead", 150),
+                (3, u"Адамовський Анатолій Ростиславович", "Software Tester", 135),
+                (4, u"Куршаков Дмитро Владиславович", "Middle Python Developer", 190),
+                (5, u"Полканов Мстислав Абрамович", "Data Scientist", 120),
+                (6, u"Пеньков Олег Демидович", "Team Lead", 150),
+                (7, u"Смірнов Анатолій Олександрович", "Software Tester", 135),
+                (8, u"Розкін Валентин Опанасійович", "HR", 190),
+
             )
             conn.execute("DROP TABLE {}".format(self.table))
             db.commit()
 
-            conn.execute("CREATE TABLE {} (id INTEGER, name TEXT, post TEXT)".format(self.table))
+            conn.execute("CREATE TABLE {} (id INTEGER, name TEXT, post TEXT, rate INTEGER)".format(self.table))
             db.commit()
 
-            conn.executemany("INSERT INTO {} (id, name, post) VALUES (?, ?, ?)".format(self.table), employees)
+            conn.executemany("INSERT INTO {} (id, name, post, rate) VALUES (?, ?, ?, ?)".format(self.table), employees)
             db.commit()

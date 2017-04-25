@@ -2,6 +2,10 @@
 
 {% block body %}
 
+    {% if (error != None):%}
+        <div class="alert alert-danger" role="alert"> {{error}} </div>
+    {% endif %}
+
     <div class="jumbotron" style="padding: 55px; margin-top: 100px;">
         <h1>Система розрахунку зарплати</h1>
     </div>

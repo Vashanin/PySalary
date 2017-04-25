@@ -2,6 +2,62 @@
 
 {% block body %}
 
-    <p> Here must be new table form </p>
+    {% if (error != None):%}
+        <div class="alert alert-danger" role="alert"> {{error}} </div>
+    {% endif %}
 
+    <div class="page-header">
+        <h1 style="margin-left: 50px;"><small>Заповнення табеля</small></h1>
+    </div>
+
+    <form method="POST" action="/new-table/">
+        <div class="input-group" style="margin: 20px 50px; width: 750px;">
+            <span class="input-group-addon" id="basic-addon1"> Оберіть ПІБ працівника </span>
+            <select type="text" class="form-control"
+                    aria-describedby="basic-addon1"
+                    name="employee_name">
+                {% for employee in EMPLOYEES_DATA %}
+                <option>
+                    {{employee["name"]}}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="input-group" style="margin: 20px 50px; width: 750px;">
+            <span class="input-group-addon" id="basic-addon1"> Місяць для заповнення </span>
+            <select type="text" class="form-control"
+                    aria-describedby="basic-addon1"
+                    name="month">
+                <option value="12"> Грудень </option>
+                <option value="1"> Січень </option>
+                <option value="2"> Лютий </option>
+                <option value="3"> Березень </option>
+                <option value="4"> Квітень </option>
+                <option value="5"> Травень </option>
+                <option value="6"> Червень </option>
+                <option value="7"> Липень </option>
+                <option value="8"> Серпень </option>
+                <option value="9"> Вересень </option>
+                <option value="10"> Жовтень </option>
+                <option value="11"> Листопад </option>
+            </select>
+        </div>
+
+        <div class="input-group" style="margin: 20px 50px; width: 750px;">
+            <span class="input-group-addon" id="basic-addon1"> Рік </span>
+            <input type="number" class="form-control"
+                    aria-describedby="basic-addon1"
+                    name="year">
+            </input>
+        </div>
+
+        <div class="input-group" style="margin: 20px 50px; width: 750px;">
+            <span class="input-group-addon" id="basic-addon1"> К-ть відроблених годин(через пробіл)</span>
+            <input type="text" class="form-control"
+                    aria-describedby="basic-addon1"
+                    name="hours">
+            </input>
+        </div>
+        <button type="submit" class="btn btn-default" style="margin-left: 665px;"> Підтвердити ввід </button>
+    </form>
 {% endblock%}
