@@ -6,6 +6,21 @@ from Employee import *
 
 from flask import Flask, render_template, flash, request, url_for, redirect
 
+"""
+    __init__.py - перший файл, який запускається в даному проекті. Тут створюється об'єкт app класу Flask
+    та запускається на виконання
+    
+    Далі ми прив'язуємо функції, напр homepage та певну URL адресу, за яку вона буде відповідати.
+    Наприклад, якщо в адресному рядку ми введемо 127.0.0.1:5000/tables/ - запуститься функція tables,
+    а потім перенаправить нас на сторінку tables.html
+
+    За допомогою функції render_template ми визначаємо на яку сторінку буде перенаправлено з даної функції,
+    а також перелік інших аргументів, які будуть передані.
+    Наприклад, можемо передати перний словник з набором значень, які потім будуть відображатися в браузері
+    документі (див. коментарі до header.html)
+"""
+
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -14,6 +29,7 @@ def homepage():
         return render_template("main.html", error=None)
     except Exception as e:
         return render_template("main.html", error="Exception has been caught: " + e.args[0])
+
 @app.route('/employees/')
 def employees():
     try:
@@ -46,6 +62,11 @@ def tables():
 def salaries():
     return render_template("salaries.html")
 
+
+"""
+    Даний метод демонструє нам, як можна оброблювати форми за допомогою request та методів передачі
+    GET та POST
+"""
 @app.route("/handler/", methods=["POST", "GET"])
 def handler():
     try:
@@ -69,6 +90,7 @@ def new_table():
         return render_template("new-table.html", EMPLOYEES_DATA = EMPLOYEES_DATA, error=None)
     except Exception as e:
         return render_template("new-table.html", error="Exception has been caught: " + e.args[0])
+
 
 if __name__ == "__main__":
     app.run()

@@ -1,8 +1,15 @@
 # -*- coding: utf-8 -*
 
+# в даному проекті користуємося SQLite
 import sqlite3 as sqlite
 
 class Employee:
+    """
+        Даний клас виконує всі необхідні дії, що пов'язані з Працівниками: додавання/видалення/зчитування
+        з бази данних.
+        Функція render з масиву tuple, що було зчитано з бази даних Table формує асоціативний масив, який
+        потім буде виводитися в файлі new-table.html
+    """
     def __init__(self, table="Employees", database="templates/db/database.db"):
         self.table = table
         self.database = database
@@ -74,6 +81,7 @@ class Employee:
 
         return response
 
+    # функція init_table в проекті не використовується, але вона дозволяє перезаписати таблицю з БД з деякими початковими записами
     def init_table(self):
         db = sqlite.connect(self.database)
         db.row_factory = sqlite.Row
@@ -93,6 +101,11 @@ class Employee:
             )
             conn.execute("DROP TABLE {}".format(self.table))
             db.commit()
+
+            """
+                Як видно звідси, таблиця для збереження інформції про працівників складається з трьох
+                полів - ідентифікатор, ПІБ, посада та к-ть годин, що необхідно відробити за місяць
+            """
 
             conn.execute("CREATE TABLE {} (id INTEGER, name TEXT, post TEXT, rate INTEGER)".format(self.table))
             db.commit()
