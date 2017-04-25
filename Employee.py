@@ -19,6 +19,61 @@ class Employee:
 
             return data
 
+    def render(self, request):
+        EMPLOYEES_DATA = self.get_all_db_data()
+        employee_dict = {}
+        posts_dist = {}
+        month_dict = {
+            1 : u"Січень",
+            2 : u"Лютий",
+            3 : u"Березень",
+            4 : u"Квітень",
+            5 : u"Травень",
+            6 : u"Червень",
+            7 : u"Липень",
+            8 : u"Серпень",
+            9 : u"Вересень",
+            10: u"Жовтень",
+            11: u"Листопад",
+            12: u"Грудень"
+        }
+
+        for item in EMPLOYEES_DATA:
+            id = item[0]
+            name = item[1]
+            post = item[2]
+            employee_dict[id] = name
+            posts_dist[id] = post
+
+        response = {}
+        for item in request:
+            year = item["year"]
+            month = month_dict[item["month"]]
+            response[year] = {}
+
+        for item in request:
+            year = item["year"]
+            month = month_dict[item["month"]]
+            response[year][month] = []
+
+        for item in request:
+            id = item["id"]
+            employeeId = item["employeeId"]
+            year = item["year"]
+            month = month_dict[item["month"]]
+            hours = item["hours"]
+
+            employee = {
+                "id" : id,
+                "name" : employee_dict[employeeId],
+                "post" : posts_dist[employeeId],
+                "hours" : hours
+            }
+
+            response[year][month].append(employee)
+
+        return response
+
     def init_table(self):
         db = sqlite.connect(self.database)
         db.row_factory = sqlite.Row

@@ -1,32 +1,54 @@
 {% extends "header.html" %}
 
 {% block body %}
+    <div class="col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 col-xs-12">
+        <ul class="nav nav-tabs nav-justified">
+            {% for year in TABLES_DATA.keys() %}
+            <li><a data-toggle="tab" href="#{{year}}"> {{year}} </a></li>
+            {% endfor %}
+        </ul>
+        <div class="tab-content">
+            {% for year in TABLES_DATA.keys() %}
+            <div id="{{year}}" class="tab-pane fade">
+                <ul class="nav nav-tabs nav-justified">
+                    {% for month in TABLES_DATA[year].keys() %}
+                    <li><a data-toggle="tab" href="#{{month}}">
+                        {{month}}
+                    </a></li>
+                    {% endfor %}
+                </ul>
+                <div class="tab-content">
+                    {% for month in TABLES_DATA[year].keys() %}
+                        <div id="{{month}}" class="tab-pane fade">
 
-    {% if (error != None):%}
-        <div class="alert alert-danger" role="alert"> {{error}} </div>
-    {% endif %}
+                            <div class="panel panel-default">
+                                <!-- Table -->
+                                <table class="table">
+                                    <thead>
+                                        <th> Номер табеля </th>
+                                        <th> ПІБ працівника </th>
+                                        <th> Посада </th>
+                                        <th> Відпрацьовані години </th>
+                                    </thead>
+                                    <tbody>
+                                        {% for employee in TABLES_DATA[year][month] %}
+                                        <tr>
+                                            <td> {{employee["id"]}} </td>
+                                            <td> {{employee["name"]}} </td>
+                                            <td> {{employee["post"]}} </td>
+                                            <td> {{employee["hours"]}} </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
 
-    <div class="panel panel-default" style="max-width: 90%; margin: auto;">
-    <!-- Default panel contents -->
-        <div class="panel-heading">Перелік посад</div>
 
-    <!-- Table -->
-        <table class="table">
-            <thead>
-                <th> # </th>
-                <th> ПІБ </th>
-                <th> Зарплата в USD/годину </th>
-            </thead>
-            <tbody>
-                {% for item in TABLES_DATA:%}
-                <tr>
-                    <td> {{item["id"]}} </td>
-                    <td> {{item["name"]}} </td>
-                    <td> {{item["salaryPerHour"]}} </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-
 {% endblock%}

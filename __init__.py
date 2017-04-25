@@ -2,7 +2,7 @@ from Post import *
 from Table import *
 from Employee import *
 
-from flask import Flask, render_template
+from flask import Flask, render_template, flash, request, url_for, redirect
 
 app = Flask(__name__)
 
@@ -13,8 +13,7 @@ def homepage():
 @app.route('/employees/')
 def employees():
     try:
-        employee = Employee()
-        EMPLOYEES_DATA = employee.get_all_db_data()
+        EMPLOYEES_DATA = Employee().get_all_db_data()
         return render_template("employees.html", EMPLOYEES_DATA=EMPLOYEES_DATA, error=None)
     except Exception as e:
         return render_template("employees.html", error="Exception has been caught: " + e.args[0])
@@ -23,8 +22,7 @@ def employees():
 @app.route('/posts/')
 def posts():
     try:
-        post = Post()
-        POSTS_DATA = post.get_all_db_data()
+        POSTS_DATA = Post().get_all_db_data()
         return render_template("posts.html", POSTS_DATA=POSTS_DATA, error=None)
     except Exception as e:
         return render_template("posts.html", error="Exception has been caught: " + e.args[0])
@@ -33,9 +31,10 @@ def posts():
 @app.route("/tables/")
 def tables():
     try:
-        table = Table()
-        TABLES_DATA = table.get_all_db_data()
-        return render_template("tables.html", TABLES_DATA=TABLES_DATA, error=None)
+        TABLES_DATA = Table().get_all_db_data()
+        RENDERED_TABLES_DATA = Employee().render(TABLES_DATA)
+
+        return render_template("tables.html", TABLES_DATA=RENDERED_TABLES_DATA, error=None)
     except Exception as e:
         return render_template("tables.html", error="Exception has been caught: " + e.args[0])
 
