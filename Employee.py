@@ -123,27 +123,21 @@ class Employee:
             with db:
                 conn = db.cursor()
 
-                print(id)
-                print(name)
-                print(post)
-                print(rate)
-
                 conn.execute("SELECT * FROM {} WHERE id={}".format(self.table, id))
 
                 responce = conn.fetchall()
-                print(responce)
 
                 if (len(name) == 0):
-                    name = "{}".format(responce[0][1])
+                    name = responce[0][1]
 
                 if (len(post) == 0):
-                    post = "{}".format(responce[0][2])
+                    post = responce[0][2]
 
                 if (len(rate) == 0):
-                    rate = "{}".format(responce[0][3])
+                    rate = responce[0][3]
     
                 conn.execute(
-                    "UPDATE {} SET name = '{}', post = '{}', rate = '{}' WHERE id = "
+                    "UPDATE {} SET name = '{}', post = '{}', rate = '{}' WHERE id = {}"
                         .format(self.table, name, post, rate, id)
                 )
         except Exception as e:

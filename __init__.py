@@ -53,11 +53,16 @@ def posts():
 @app.route("/tables/")
 def tables():
     try:
+        #Table().init_table()
+        #raise Exception("Table has been inited")
+
         TABLES_DATA = Table().get_all_db_data()
+
         RENDERED_TABLES_DATA = Employee().render(TABLES_DATA)
 
         return render_template("tables.html", TABLES_DATA=RENDERED_TABLES_DATA, error=None)
     except Exception as e:
+        #return render_template("main.html", error="Table has been inited")
         return render_template("tables.html", error="Exception has been caught: " + e.args[0])
 
 @app.route("/salaries/")

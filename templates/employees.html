@@ -14,7 +14,7 @@
                 <th> # </th>
                 <th> Full name </th>
                 <th> Position </th>
-                <th> Wage rate </th>
+                <th> Working hours </th>
             </thead>
             <tbody>
                 {% for item in EMPLOYEES_DATA:%}
@@ -74,12 +74,12 @@
         </div>
 
         <div class="input-group" style="margin: 20px 50px; width: 1000px;">
-            <span class="input-group-addon" id="basic-addon1"> Ставка </span>
+            <span class="input-group-addon" id="basic-addon1"> Working hours </span>
             <input type="text" class="form-control"
                     aria-describedby="basic-addon1" name="rate" value="{{request.form.rate}}">
         </div>
 
-        <button type="submit" class="btn btn-default" style="margin-left: 915px;"> Підтвердити ввід </button>
+        <button type="submit" class="btn btn-default" style="margin-left: 915px;"> Submit action </button>
     </form>
 
 {% endblock%}

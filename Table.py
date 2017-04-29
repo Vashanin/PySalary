@@ -6,10 +6,10 @@ from Employee import Employee
 
 class Table:
     """
-            Клас Table створено для будь-якої взаємодій, що пов'язана з табелями: 
-            додання/видалення/редагування, що можна побачити з однойменних методів, 
-            які мають доступ до відповідних таблиць всередині баз даних, де зберігається вся інформація
-        """
+        Клас Table створено для будь-якої взаємодій, що пов'язана з табелями: 
+        додання/видалення/редагування, що можна побачити з однойменних методів, 
+        які мають доступ до відповідних таблиць всередині баз даних, де зберігається вся інформація
+    """
 
     def __init__(self, table="Tables", database="templates/db/database.db"):
         self.table = table
@@ -31,6 +31,7 @@ class Table:
         db = sqlite.connect(self.database)
         with db:
             conn = db.cursor()
+            conn.execute("DROP TABLE {}".format(self.table))
             # звідси видно, які поля має таблиця для збереження табелів працівників
             conn.execute("CREATE TABLE {} (id INTEGER, employeeId INTEGER, month INTEGER, year INTEGER, hours TEXT)".format(self.table))
             db.commit()

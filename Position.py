@@ -71,7 +71,6 @@ class Position:
                 conn.execute("SELECT * FROM {} WHERE id={}".format(self.table, id))
 
                 responce = conn.fetchall()
-                print(responce)
 
                 if (len(name) == 0):
                     name = responce[0][1]
