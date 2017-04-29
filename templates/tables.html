@@ -56,4 +56,83 @@
             {% endfor %}
         </div>
     </div>
+
+
+    <form method="POST" action="/tables-handler/" style="margin-top: 200px; clear: both;">
+
+        <div class="alert alert-info" role="alert" style="margin:100px 50px 20px 50px; width: 800px;">
+            Your action will be related with id! (except for adding)
+        </div>
+
+        <div class="input-group" style="margin: 20px 50px; width: 1000px;">
+            <span class="input-group-addon" id="basic-addon1"> Chose action: </span>
+            <select type="text" class="form-control"
+                    aria-describedby="basic-addon1" name="action" value="{{request.form.action}}">
+                <option value="add">Add</option>
+                <option value="edit">Edit</option>
+                <option value="remove">Remove</option>
+            </select>
+        </div>
+
+        <div class="input-group" style="margin: 20px 50px; width: 1000px;">
+            <span class="input-group-addon" id="basic-addon1"> id </span>
+            <select type="text" class="form-control"
+                    aria-describedby="basic-addon1" name="id" value="{{request.form.id}}">
+                {% for item in indexes:%}
+                <option value="{{item}}">{{item}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+                <div class="input-group" style="margin: 20px 50px; width: 1000px;">
+            <span class="input-group-addon" id="basic-addon1"> Chose name of employee </span>
+            <select type="text" class="form-control"
+                    aria-describedby="basic-addon1"
+                    name="employee_name" value="{{request.form.employee_name}}">
+                {% for employee in EMPLOYEES_DATA %}
+                <option>
+                    {{employee["name"]}}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="input-group" style="margin: 20px 50px; width: 1000px;">
+            <span class="input-group-addon" id="basic-addon1"> Place for filling </span>
+            <select type="text" class="form-control"
+                    aria-describedby="basic-addon1"
+                    name="month" value="{{request.form.month}}">
+                <option value="12"> December </option>
+                <option value="1"> January </option>
+                <option value="2"> February </option>
+                <option value="3"> March </option>
+                <option value="4"> April </option>
+                <option value="5"> May </option>
+                <option value="6"> June </option>
+                <option value="7"> July </option>
+                <option value="8"> August </option>
+                <option value="9"> September </option>
+                <option value="10"> October </option>
+                <option value="11"> November </option>
+            </select>
+        </div>
+
+        <div class="input-group" style="margin: 20px 50px; width: 1000px;">
+            <span class="input-group-addon" id="basic-addon1"> Year </span>
+            <input type="number" class="form-control"
+                    aria-describedby="basic-addon1"
+                    name="year" value="{{request.form.year}}">
+            </input>
+        </div>
+
+        <div class="input-group" style="margin: 20px 50px; width: 1000px;">
+            <span class="input-group-addon" id="basic-addon1"> Amount of hours worked</span>
+            <input type="text" class="form-control"
+                    aria-describedby="basic-addon1"
+                    name="hours" value="{{request.form.hours}}">
+            </input>
+        </div>
+
+        <button type="submit" class="btn btn-default" style="margin-left: 915px; margin-bottom: 50px;"> Submit action </button>
+    </form>
+
 {% endblock%}

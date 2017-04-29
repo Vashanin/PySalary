@@ -41,8 +41,8 @@ def employees():
         return render_template("employees.html", error="Exception has been caught: " + e.args[0])
 
 
-@app.route('/posts/')
-def posts():
+@app.route('/positions/')
+def positions():
     try:
         POSTS_DATA = Position().get_all_db_data()
         return render_template("positionts.html", POSTS_DATA=POSTS_DATA, error=None)
@@ -53,17 +53,19 @@ def posts():
 @app.route("/tables/")
 def tables():
     try:
-        #Table().init_table()
-        #raise Exception("Table has been inited")
 
         TABLES_DATA = Table().get_all_db_data()
+        EMPLOYEES_DATA = Employee().get_all_db_data()
+
+        indexes = []
+        for item in TABLES_DATA:
+            indexes.append(item[0])
 
         RENDERED_TABLES_DATA = Employee().render(TABLES_DATA)
 
-        return render_template("tables.html", TABLES_DATA=RENDERED_TABLES_DATA, error=None)
+        return render_template("tables.html", indexes=indexes, EMPLOYEES_DATA=EMPLOYEES_DATA, TABLES_DATA=RENDERED_TABLES_DATA, error=None)
     except Exception as e:
-        #return render_template("main.html", error="Table has been inited")
-        return render_template("tables.html", error="Exception has been caught: " + e.args[0])
+        return render_template("tables.html", indexes=[], TABLES_DATA={}, EMPLOYEES_DATA={}, error="Exception has been caught: " + e.args[0])
 
 @app.route("/salaries/")
 def salaries():
@@ -104,7 +106,7 @@ def employees_handler():
 
     return redirect(url_for("employees"))
 
-@app.route("/posts-handler/", methods=["POST", "GET"])
+@app.route("/positions-handler/", methods=["POST", "GET"])
 def posts_handler():
     if request.method == "POST":
         action = request.form["action"]
@@ -119,7 +121,26 @@ def posts_handler():
         if (action == "edit"):
             Position().change_position(id, name, salary)
 
-    return redirect(url_for("posts"))
+    return redirect(url_for("positions"))
+
+@app.route("/table-handler/", methods=["POST", "GET"])
+def tables_handler():
+    if request.method == "POST":
+        action = request.form["action"]
+        id = request.form["id"]
+        employee_name = request.form["employee_name"]
+        month = request.form["month"]
+        hours = request.form["hours"]
+        year = request.form["year"]
+
+        if (action == "add"):
+            Table().add_table(employee_name, month, year, hours)
+        if (action == "remove"):
+            Table().remove_table(id)
+        if (action == "edit"):
+            Table().edit_table(id, employee_name, month, year, hours)
+
+    return redirect(url_for("tables"))
 
 @app.route("/new-table/")
 def new_table():

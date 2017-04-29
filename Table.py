@@ -15,6 +15,23 @@ class Table:
         self.table = table
         self.database = database
 
+    def add_table(self, employee_name, month, year, hours):
+        self.add_to_db(employee_name, month, year, hours)
+
+    def remove_table(self, id):
+        try:
+            db = sqlite.connect(self.database)
+            with db:
+                conn = db.cursor()
+                conn.execute("DELETE FROM {} WHERE id={}".format(self.table, id))
+        except Exception as e:
+            print(e.args)
+
+
+    def edit_table(self, id, employee_name, month, year, hours):
+        return None
+    
+
     def get_all_db_data(self):
         db = sqlite.connect(self.database)
         db.row_factory = sqlite.Row
