@@ -8,14 +8,14 @@
 
     <div class="panel panel-default" style="max-width: 90%; margin: auto;">
     <!-- Default panel contents -->
-        <div class="panel-heading">Перелік посад</div>
+        <div class="panel-heading">List of positions</div>
 
     <!-- Table -->
         <table class="table">
             <thead>
                 <th> # </th>
-                <th> Назва посади </th>
-                <th> Зарплата в USD/годину </th>
+                <th> Job title </th>
+                <th> Wage rate in USD/hour </th>
             </thead>
             <tbody>
                 {% for item in POSTS_DATA:%}
@@ -32,21 +32,21 @@
     <form method="POST" action="/posts-handler/">
 
         <div class="alert alert-info" role="alert" style="margin:100px 50px 20px 50px; width: 800px;">
-            Обрана дія в першу чергу буде прив'язана до ідентифікатора! (якщо це не додавання)
+            Your action will be related with id! (except for adding)
         </div>
 
         <div class="input-group" style="margin: 20px 50px; width: 1000px;">
-            <span class="input-group-addon" id="basic-addon1"> Оберіть одну з трьох дій: </span>
+            <span class="input-group-addon" id="basic-addon1"> Chose action: </span>
             <select type="text" class="form-control"
                     aria-describedby="basic-addon1" name="action" value="{{request.form.action}}">
-                <option value="add">Додати</option>
-                <option value="edit">Редагувати</option>
-                <option value="remove">Видалити</option>
+                <option value="add">Add</option>
+                <option value="edit">Edit</option>
+                <option value="remove">Remove</option>
             </select>
         </div>
 
         <div class="input-group" style="margin: 20px 50px; width: 1000px;">
-            <span class="input-group-addon" id="basic-addon1"> Ідентифікатор </span>
+            <span class="input-group-addon" id="basic-addon1"> id </span>
             <select type="text" class="form-control"
                     aria-describedby="basic-addon1" name="id" value="{{request.form.id}}">
                 {% for post in POSTS_DATA%}
@@ -56,17 +56,17 @@
         </div>
 
         <div class="input-group" style="margin: 20px 50px; width: 1000px;">
-            <span class="input-group-addon" id="basic-addon1"> Назва посади </span>
+            <span class="input-group-addon" id="basic-addon1"> Job title </span>
             <input type="text" class="form-control"
                     aria-describedby="basic-addon1" name="name" value="{{request.form.name}}">
         </div>
 
 
         <div class="input-group" style="margin: 20px 50px; width: 1000px;">
-            <span class="input-group-addon" id="basic-addon1"> USD/годину </span>
+            <span class="input-group-addon" id="basic-addon1"> USD per hour </span>
             <input type="text" class="form-control"
                     aria-describedby="basic-addon1" name="salary" value="{{request.form.salary}}">
         </div>
-        <button type="submit" class="btn btn-default" style="margin-left: 915px;"> Підтвердити ввід </button>
+        <button type="submit" class="btn btn-default" style="margin-left: 915px;"> Submit action </button>
     </form>
 {% endblock %}

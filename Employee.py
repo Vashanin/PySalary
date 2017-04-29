@@ -1,7 +1,9 @@
-# -*- coding: utf-8 -*
+# !/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import sqlite3 as sqlite
 
 # в даному проекті користуємося SQLite
-import sqlite3 as sqlite
 
 class Employee:
     """
@@ -31,18 +33,18 @@ class Employee:
         employee_dict = {}
         posts_dist = {}
         month_dict = {
-            1 : u"Січень",
-            2 : u"Лютий",
-            3 : u"Березень",
-            4 : u"Квітень",
-            5 : u"Травень",
-            6 : u"Червень",
-            7 : u"Липень",
-            8 : u"Серпень",
-            9 : u"Вересень",
-            10: u"Жовтень",
-            11: u"Листопад",
-            12: u"Грудень"
+            1 : "January",
+            2 : "February",
+            3 : "March",
+            4 : "April",
+            5 : "May",
+            6 : "June",
+            7 : "July",
+            8 : "August",
+            9 : "September",
+            10: "October",
+            11: "November",
+            12: "December"
         }
 
         for item in EMPLOYEES_DATA:
@@ -132,20 +134,20 @@ class Employee:
                 print(responce)
 
                 if (len(name) == 0):
-                    name = u"{}".format(responce[0][1])
+                    name = "{}".format(responce[0][1])
 
                 if (len(post) == 0):
-                    post = u"{}".format(responce[0][2])
+                    post = "{}".format(responce[0][2])
 
                 if (len(rate) == 0):
-                    rate = u"{}".format(responce[0][3])
+                    rate = "{}".format(responce[0][3])
     
                 conn.execute(
-                    "UPDATE {} SET name = '{}', post = '{}', rate = u'{}' WHERE id = "
-                        .format(u"{}".format(self.table), u"{}".format(name), u"{}".format(post), u"{}".format(rate), u"{}".format(id))
+                    "UPDATE {} SET name = '{}', post = '{}', rate = '{}' WHERE id = "
+                        .format(self.table, name, post, rate, id)
                 )
         except Exception as e:
-            print("Troubles with edit_commodity_in_db: " + e.args[0])
+            print("Troubles with change_employee: " + e.args[0])
 
 
     # функція init_table в проекті не використовується, але вона дозволяє перезаписати таблицю з БД з деякими початковими записами
@@ -156,14 +158,14 @@ class Employee:
         with db:
             conn = db.cursor()
             employees = (
-                (1, u"Анакинов Владислав Петрович", "HR", 120),
-                (2, u"Голованов Сергей Дмитрович", "Team Lead", 150),
-                (3, u"Адамовський Анатолій Ростиславович", "Software Tester", 135),
-                (4, u"Куршаков Дмитро Владиславович", "Middle Python Developer", 190),
-                (5, u"Полканов Мстислав Абрамович", "Data Scientist", 120),
-                (6, u"Пеньков Олег Демидович", "Team Lead", 150),
-                (7, u"Смірнов Анатолій Олександрович", "Software Tester", 135),
-                (8, u"Розкін Валентин Опанасійович", "HR", 190),
+                (1, "John Smith", "HR", 120),
+                (2, "Isaac Jackson", "Team Lead", 150),
+                (3, "Garry Hart", "Software Tester", 135),
+                (4, "Colin Sparks", "Middle Python Developer", 190),
+                (5, "Dorothy Hampton", "Data Scientist", 120),
+                (6, "Mitchell Poole", "Team Lead", 150),
+                (7, "Chloe Scott", "Software Tester", 135),
+                (8, "Mae Lawson", "HR", 190),
 
             )
             conn.execute("DROP TABLE {}".format(self.table))

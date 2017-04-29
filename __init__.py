@@ -1,6 +1,7 @@
-# -*- coding: utf-8 -*
+# !/usr/bin/env python
+# -*- coding: utf-8 -*-
 
-from Post import *
+from Position import *
 from Table import *
 from Employee import *
 
@@ -33,7 +34,7 @@ def homepage():
 @app.route('/employees/')
 def employees():
     try:
-        POSTS_DATA = Post().get_all_db_data()
+        POSTS_DATA = Position().get_all_db_data()
         EMPLOYEES_DATA = Employee().get_all_db_data()
         return render_template("employees.html", EMPLOYEES_DATA=EMPLOYEES_DATA, POSTS_DATA=POSTS_DATA, error=None)
     except Exception as e:
@@ -43,10 +44,10 @@ def employees():
 @app.route('/posts/')
 def posts():
     try:
-        POSTS_DATA = Post().get_all_db_data()
-        return render_template("posts.html", POSTS_DATA=POSTS_DATA, error=None)
+        POSTS_DATA = Position().get_all_db_data()
+        return render_template("positionts.html", POSTS_DATA=POSTS_DATA, error=None)
     except Exception as e:
-        return render_template("posts.html", error="Exception has been caught: " + e.args[0])
+        return render_template("positionts.html", error="Exception has been caught: " + e.args[0])
 
 
 @app.route("/tables/")
@@ -107,11 +108,11 @@ def posts_handler():
         salary = request.form["salary"]
 
         if (action == "add"):
-            Post().add_new_post(name, salary)
+            Position().add_new_position(name, salary)
         if (action == "remove"):
-            Post().remove_post(id)
+            Position().remove_post(id)
         if (action == "edit"):
-            Post().change_post(id, name, salary)
+            Position().change_position(id, name, salary)
 
     return redirect(url_for("posts"))
 

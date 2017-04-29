@@ -1,11 +1,13 @@
-# -*- coding: utf-8 -*
+# !/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import sqlite3 as sqlite
+import traceback
 
-class Post:
+class Position:
 
     """
-        Клас Post створено для будь-якої взаємодій, що пов'язана з посадами: додання/видалення/редагування,
+        Клас Position створено для будь-якої взаємодій, що пов'язана з посадами: додання/видалення/редагування,
         що можна побачити з однойменних методів, які мають доступ до відповідних таблиць всередині баз даних,
         де зберігається вся інформація
     """
@@ -27,7 +29,7 @@ class Post:
 
             return data
 
-    def add_new_post(self, name, salary):
+    def add_new_position(self, name, salary):
         try:
             db = sqlite.connect(self.database)
             with db:
@@ -49,7 +51,7 @@ class Post:
                 )
 
         except Exception as e:
-            print("Troubles with add_commodity_to_db: " + e.args[0])
+            print("Troubles with add_new_position: " + e.args[0])
 
     def remove_post(self, id):
         try:
@@ -60,7 +62,7 @@ class Post:
         except Exception as e:
             print(e.args)
 
-    def change_employee(self, id, name, salary):
+    def change_position(self, id, name, salary):
         try:
             db = sqlite.connect(self.database)
             with db:
@@ -72,18 +74,15 @@ class Post:
                 print(responce)
 
                 if (len(name) == 0):
-                    name = u"{}".format(responce[0][1])
-
-                if (len(name) == 0):
-                    post = u"{}".format(responce[0][2])
+                    name = responce[0][1]
 
                 if (len(salary) == 0):
-                    rate = u"{}".format(responce[0][3])
+                    salary = responce[0][2]
 
                 conn.execute(
-                    "UPDATE {} SET name = '{}', salaryPerHour = '{}' WHERE id = "
-                        .format(u"{}".format(self.table), u"{}".format(name), u"{}".format(salary),
-                                u"{}".format(id))
+                    "UPDATE {} SET name = '{}', salaryPerHour = '{}' WHERE id = {}"
+                        .format(self.table, name, salary, id)
                 )
-        except Exception as e:
-            print("Troubles with edit_commodity_in_db: " + e.args[0])
+        except   Exception as e:
+            print("Troubles with change_position: " + e.args[0])
+            print(traceback.format_exc())
