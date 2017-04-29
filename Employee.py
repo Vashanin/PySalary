@@ -81,6 +81,13 @@ class Employee:
 
             response[year][month].append(employee)
 
+        for year in response.keys():
+            print("Year: " + str(year))
+            for month in response[year].keys():
+                print("\tMonth" + str(month))
+                for employee in response[year][month]:
+                    print("\t\t{}".format(employee))
+
         return response
 
     def add_new_employee(self, name, post, rate):

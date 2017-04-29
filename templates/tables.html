@@ -17,14 +17,14 @@
             <div id="{{year}}" class="tab-pane fade">
                 <ul class="nav nav-tabs nav-justified">
                     {% for month in TABLES_DATA[year].keys() %}
-                    <li><a data-toggle="tab" href="#{{month}}">
+                    <li><a data-toggle="tab" href="#{{month}}{{year}}">
                         {{month}}
                     </a></li>
                     {% endfor %}
                 </ul>
                 <div class="tab-content">
                     {% for month in TABLES_DATA[year].keys() %}
-                        <div id="{{month}}" class="tab-pane fade">
+                        <div id="{{month}}{{year}}" class="tab-pane fade">
 
                             <div class="panel panel-default">
                                 <!-- Table -->

@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8172ef7e-bb8d-4570-ba71-2a85b6cc2b65" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Employee.py" afterPath="$PROJECT_DIR$/Employee.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Position.py" afterPath="$PROJECT_DIR$/Position.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Table.py" afterPath="$PROJECT_DIR$/Table.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/__init__.py" afterPath="$PROJECT_DIR$/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/db/database.db" afterPath="$PROJECT_DIR$/templates/db/database.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/employees.html" afterPath="$PROJECT_DIR$/templates/employees.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/tables.html" afterPath="$PROJECT_DIR$/templates/tables.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,8 +47,8 @@
       <file leaf-file-name="tables.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/tables.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="26" column="63" lean-forward="false" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
+            <state relative-caret-position="576">
+              <caret line="51" column="30" lean-forward="true" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -126,22 +121,22 @@
       <file leaf-file-name="Employee.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Employee.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="67" column="28" lean-forward="true" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
+            <state relative-caret-position="432">
+              <caret line="88" column="52" lean-forward="false" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="52" />
               <folding>
-                <marker date="1493498872524" expanded="true" signature="761:775" ph="SELECT * FRO... missing_value" />
-                <marker date="1493498872524" expanded="true" signature="2568:2588" ph="SELECT MAX(i... missing_value" />
-                <marker date="1493498872524" expanded="true" signature="2978:3032" ph="INSERT INTO missing_value... " />
-                <marker date="1493498872524" expanded="true" signature="3365:3389" ph="DELETE FROM " />
-                <marker date="1493498872524" expanded="true" signature="3675:3701" ph="SELECT * FRO... missing_value" />
-                <marker date="1493498872524" expanded="true" signature="4069:4091" ph="UPDATE {} SE... " />
-                <marker date="1493498872524" expanded="true" signature="4069:4131" ph="UPDATE {} SE... " />
-                <marker date="1493498872524" expanded="true" signature="4069:4132" ph="UPDATE missi... " />
-                <marker date="1493498872524" expanded="true" signature="4069:4134" ph="UPDATE {} SE... " />
-                <marker date="1493498872524" expanded="true" signature="5126:5137" ph="DROP TABLE m... " />
-                <marker date="1493498872524" expanded="true" signature="5126:5139" ph="DROP TABLE {... " />
-                <marker date="1493498872524" expanded="true" signature="5446:5510" ph="CREATE TABLE... missing_value" />
-                <marker date="1493498872524" expanded="true" signature="5587:5644" ph="INSERT INTO missing_value... " />
+                <marker date="1493500898879" expanded="true" signature="761:775" ph="SELECT * FRO... missing_value" />
+                <marker date="1493500898879" expanded="true" signature="2848:2868" ph="SELECT MAX(i... missing_value" />
+                <marker date="1493500898879" expanded="true" signature="3258:3312" ph="INSERT INTO missing_value... " />
+                <marker date="1493500898879" expanded="true" signature="3645:3669" ph="DELETE FROM " />
+                <marker date="1493500898879" expanded="true" signature="3955:3981" ph="SELECT * FRO... missing_value" />
+                <marker date="1493500898879" expanded="true" signature="4349:4371" ph="UPDATE {} SE... " />
+                <marker date="1493500898879" expanded="true" signature="4349:4411" ph="UPDATE {} SE... " />
+                <marker date="1493500898879" expanded="true" signature="4349:4412" ph="UPDATE missi... " />
+                <marker date="1493500898879" expanded="true" signature="4349:4414" ph="UPDATE {} SE... " />
+                <marker date="1493500898879" expanded="true" signature="5406:5417" ph="DROP TABLE m... " />
+                <marker date="1493500898879" expanded="true" signature="5406:5419" ph="DROP TABLE {... " />
+                <marker date="1493500898879" expanded="true" signature="5726:5790" ph="CREATE TABLE... missing_value" />
+                <marker date="1493500898879" expanded="true" signature="5867:5924" ph="INSERT INTO missing_value... " />
               </folding>
             </state>
           </provider>
@@ -209,10 +204,10 @@
         <option value="$PROJECT_DIR$/templates/positionts.html" />
         <option value="$PROJECT_DIR$/templates/header.html" />
         <option value="$PROJECT_DIR$/templates/employees.html" />
-        <option value="$PROJECT_DIR$/Employee.py" />
         <option value="$PROJECT_DIR$/Position.py" />
         <option value="$PROJECT_DIR$/Table.py" />
         <option value="$PROJECT_DIR$/__init__.py" />
+        <option value="$PROJECT_DIR$/Employee.py" />
         <option value="$PROJECT_DIR$/templates/tables.html" />
       </list>
     </option>
@@ -718,51 +713,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Position.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="e#48#72#0" expanded="true" />
-            <marker date="1493498952081" expanded="true" signature="709:723" ph="SELECT * FRO... missing_value" />
-            <marker date="1493498952081" expanded="true" signature="1049:1069" ph="SELECT MAX(i... missing_value" />
-            <marker date="1493498952081" expanded="true" signature="1451:1506" ph="INSERT INTO missing_value... " />
-            <marker date="1493498952081" expanded="true" signature="1827:1851" ph="DELETE FROM " />
-            <marker date="1493498952081" expanded="true" signature="2133:2159" ph="SELECT * FRO... missing_value" />
-            <marker date="1493498952081" expanded="true" signature="2447:2505" ph="UPDATE missi... " />
-            <marker date="1493498952081" expanded="true" signature="2447:2506" ph="UPDATE missi... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding>
             <element signature="e#48#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Employee.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="67" column="28" lean-forward="true" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
-          <folding>
-            <marker date="1493498872524" expanded="true" signature="761:775" ph="SELECT * FRO... missing_value" />
-            <marker date="1493498872524" expanded="true" signature="2568:2588" ph="SELECT MAX(i... missing_value" />
-            <marker date="1493498872524" expanded="true" signature="2978:3032" ph="INSERT INTO missing_value... " />
-            <marker date="1493498872524" expanded="true" signature="3365:3389" ph="DELETE FROM " />
-            <marker date="1493498872524" expanded="true" signature="3675:3701" ph="SELECT * FRO... missing_value" />
-            <marker date="1493498872524" expanded="true" signature="4069:4091" ph="UPDATE {} SE... " />
-            <marker date="1493498872524" expanded="true" signature="4069:4131" ph="UPDATE {} SE... " />
-            <marker date="1493498872524" expanded="true" signature="4069:4132" ph="UPDATE missi... " />
-            <marker date="1493498872524" expanded="true" signature="4069:4134" ph="UPDATE {} SE... " />
-            <marker date="1493498872524" expanded="true" signature="5126:5137" ph="DROP TABLE m... " />
-            <marker date="1493498872524" expanded="true" signature="5126:5139" ph="DROP TABLE {... " />
-            <marker date="1493498872524" expanded="true" signature="5446:5510" ph="CREATE TABLE... missing_value" />
-            <marker date="1493498872524" expanded="true" signature="5587:5644" ph="INSERT INTO missing_value... " />
           </folding>
         </state>
       </provider>
@@ -784,6 +740,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Position.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#48#72#0" expanded="true" />
+            <marker date="1493498952081" expanded="true" signature="709:723" ph="SELECT * FRO... missing_value" />
+            <marker date="1493498952081" expanded="true" signature="1049:1069" ph="SELECT MAX(i... missing_value" />
+            <marker date="1493498952081" expanded="true" signature="1451:1506" ph="INSERT INTO missing_value... " />
+            <marker date="1493498952081" expanded="true" signature="1827:1851" ph="DELETE FROM " />
+            <marker date="1493498952081" expanded="true" signature="2133:2159" ph="SELECT * FRO... missing_value" />
+            <marker date="1493498952081" expanded="true" signature="2447:2505" ph="UPDATE missi... " />
+            <marker date="1493498952081" expanded="true" signature="2447:2506" ph="UPDATE missi... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Employee.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="88" column="52" lean-forward="false" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="52" />
+          <folding>
+            <marker date="1493500898879" expanded="true" signature="761:775" ph="SELECT * FRO... missing_value" />
+            <marker date="1493500898879" expanded="true" signature="2848:2868" ph="SELECT MAX(i... missing_value" />
+            <marker date="1493500898879" expanded="true" signature="3258:3312" ph="INSERT INTO missing_value... " />
+            <marker date="1493500898879" expanded="true" signature="3645:3669" ph="DELETE FROM " />
+            <marker date="1493500898879" expanded="true" signature="3955:3981" ph="SELECT * FRO... missing_value" />
+            <marker date="1493500898879" expanded="true" signature="4349:4371" ph="UPDATE {} SE... " />
+            <marker date="1493500898879" expanded="true" signature="4349:4411" ph="UPDATE {} SE... " />
+            <marker date="1493500898879" expanded="true" signature="4349:4412" ph="UPDATE missi... " />
+            <marker date="1493500898879" expanded="true" signature="4349:4414" ph="UPDATE {} SE... " />
+            <marker date="1493500898879" expanded="true" signature="5406:5417" ph="DROP TABLE m... " />
+            <marker date="1493500898879" expanded="true" signature="5406:5419" ph="DROP TABLE {... " />
+            <marker date="1493500898879" expanded="true" signature="5726:5790" ph="CREATE TABLE... missing_value" />
+            <marker date="1493500898879" expanded="true" signature="5867:5924" ph="INSERT INTO missing_value... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/employees.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -794,8 +789,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/tables.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="63" lean-forward="false" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
+        <state relative-caret-position="576">
+          <caret line="51" column="30" lean-forward="true" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
           <folding />
         </state>
       </provider>
