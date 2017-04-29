@@ -30,7 +30,7 @@ class Table:
 
     def edit_table(self, id, employee_name, month, year, hours):
         return None
-    
+
 
     def get_all_db_data(self):
         db = sqlite.connect(self.database)

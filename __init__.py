@@ -123,7 +123,7 @@ def posts_handler():
 
     return redirect(url_for("positions"))
 
-@app.route("/table-handler/", methods=["POST", "GET"])
+@app.route("/tables-handler/", methods=["POST", "GET"])
 def tables_handler():
     if request.method == "POST":
         action = request.form["action"]
