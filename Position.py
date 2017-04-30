@@ -62,7 +62,7 @@ class Position:
         except Exception as e:
             print(e.args)
 
-    def change_position(self, id, name, salary):
+    def edit_position(self, id, name, salary):
         try:
             db = sqlite.connect(self.database)
             with db:
@@ -83,5 +83,5 @@ class Position:
                         .format(self.table, name, salary, id)
                 )
         except   Exception as e:
-            print("Troubles with change_position: " + e.args[0])
+            print("Troubles with edit_position: " + e.args[0])
             print(traceback.format_exc())

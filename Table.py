@@ -1,6 +1,7 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import traceback
 import sqlite3 as sqlite
 from Employee import Employee
 
@@ -29,7 +30,43 @@ class Table:
 
 
     def edit_table(self, id, employee_name, month, year, hours):
-        return None
+        try:
+            db = sqlite.connect(self.database)
+            with db:
+                conn = db.cursor()
+
+                employees = Employee().get_all_db_data()
+
+                conn.execute("SELECT * FROM {} WHERE id={}".format(self.table, id))
+
+                responce = conn.fetchall()
+
+                if (len(employee_name) == 0):
+                    employee_name = responce[0][1]
+
+                if (len(str(month)) == 0):
+                    salary = responce[0][2]
+
+                if (len(str(year)) == 0):
+                    year = responce[0][3]
+
+                if (len(str(hours)) == 0):
+                    hours = responce[0][4]
+
+                employee_dict = {}
+                for employee in employees:
+                    employee_dict[employee["name"]] = employee["id"]
+
+                employee_id = employee_dict[employee_name]
+
+                conn.execute(
+                    "UPDATE {} SET employeeId = '{}', month = '{}', year = '{}', hours='{}' WHERE id = {}"
+                        .format(self.table, employee_id, month, year, hours, id)
+                )
+
+        except   Exception as e:
+            print("Troubles with edit_table: " + e.args[0])
+            print(traceback.format_exc())
 
 
     def get_all_db_data(self):

@@ -119,7 +119,7 @@ def posts_handler():
         if (action == "remove"):
             Position().remove_post(id)
         if (action == "edit"):
-            Position().change_position(id, name, salary)
+            Position().edit_position(id, name, salary)
 
     return redirect(url_for("positions"))
 
