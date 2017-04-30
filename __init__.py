@@ -4,6 +4,7 @@
 from Position import *
 from Table import *
 from Employee import *
+from Salary import *
 
 from flask import Flask, render_template, flash, request, url_for, redirect
 
@@ -71,7 +72,6 @@ def tables():
 def salaries():
     return render_template("salaries.html")
 
-
 """
     Даний метод демонструє нам, як можна оброблювати форми за допомогою request та методів передачі
     GET та POST
@@ -105,6 +105,10 @@ def employees_handler():
             Employee().change_employee(id, name, post, rate)
 
     return redirect(url_for("employees"))
+
+@app.route("/salaries-handler/", methods=["POST", "GET"])
+def salaries_handler():
+    return None
 
 @app.route("/positions-handler/", methods=["POST", "GET"])
 def posts_handler():
