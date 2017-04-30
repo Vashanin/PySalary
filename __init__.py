@@ -70,6 +70,10 @@ def tables():
 
 @app.route("/salaries/")
 def salaries():
+    SALARIES_INFO = Salary().calculate_salary_for_all()
+    for item in SALARIES_INFO:
+        print(item)
+
     return render_template("salaries.html")
 
 """

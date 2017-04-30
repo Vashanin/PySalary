@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8172ef7e-bb8d-4570-ba71-2a85b6cc2b65" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Salary.py" afterPath="$PROJECT_DIR$/Salary.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/__init__.py" afterPath="$PROJECT_DIR$/__init__.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,16 +24,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/main.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="28" lean-forward="false" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/header.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -46,8 +37,8 @@
       <file leaf-file-name="Table.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Table.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+            <state relative-caret-position="18">
+              <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
               <folding>
                 <element signature="e#48#64#0" expanded="true" />
                 <element signature="e#496#547#0" expanded="false" />
@@ -88,9 +79,11 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-              <folding />
+            <state relative-caret-position="449">
+              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+              <folding>
+                <element signature="e#48#70#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,12 +91,19 @@
       <file leaf-file-name="Salary.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Salary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+            <state relative-caret-position="504">
+              <caret line="41" column="29" lean-forward="true" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
               <folding>
                 <element signature="e#48#64#0" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="17kG6B2qnKQ.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/17kG6B2qnKQ.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -120,8 +120,8 @@
       <file leaf-file-name="Position.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Position.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#48#72#0" expanded="true" />
                 <marker date="1493567355676" expanded="true" signature="709:723" ph="SELECT * FRO... missing_value" />
@@ -139,7 +139,7 @@
       <file leaf-file-name="employees.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/employees.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1152">
+            <state relative-caret-position="144">
               <caret line="64" column="11" lean-forward="false" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
               <folding>
                 <element signature="n#style#0;n#button#0;n#form#0;n#!!top" expanded="true" />
@@ -151,8 +151,8 @@
       <file leaf-file-name="Employee.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Employee.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1476">
-              <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+            <state relative-caret-position="378">
+              <caret line="169" column="28" lean-forward="false" selection-start-line="169" selection-start-column="28" selection-end-line="169" selection-end-column="28" />
               <folding>
                 <marker date="1493503565018" expanded="true" signature="761:775" ph="SELECT * FRO... missing_value" />
                 <marker date="1493503565018" expanded="true" signature="2568:2588" ph="SELECT MAX(i... missing_value" />
@@ -323,6 +323,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../PyTrading" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/SQL Dialects" value="SQLite" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/vashanin/PycharmProjects/PySalary/Position.py" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -653,11 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/17kG6B2qnKQ.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/db/database.db">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -702,38 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Employee.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1476">
-          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding>
-            <marker date="1493503565018" expanded="true" signature="761:775" ph="SELECT * FRO... missing_value" />
-            <marker date="1493503565018" expanded="true" signature="2568:2588" ph="SELECT MAX(i... missing_value" />
-            <marker date="1493503565018" expanded="true" signature="2978:3032" ph="INSERT INTO missing_value... " />
-            <marker date="1493503565018" expanded="true" signature="3365:3389" ph="DELETE FROM " />
-            <marker date="1493503565018" expanded="true" signature="3675:3701" ph="SELECT * FRO... missing_value" />
-            <marker date="1493503565018" expanded="true" signature="4069:4091" ph="UPDATE {} SE... " />
-            <marker date="1493503565018" expanded="true" signature="4069:4131" ph="UPDATE {} SE... " />
-            <marker date="1493503565018" expanded="true" signature="4069:4132" ph="UPDATE missi... " />
-            <marker date="1493503565018" expanded="true" signature="4069:4134" ph="UPDATE {} SE... " />
-            <marker date="1493503565018" expanded="true" signature="5126:5137" ph="DROP TABLE m... " />
-            <marker date="1493503565018" expanded="true" signature="5126:5139" ph="DROP TABLE {... " />
-            <marker date="1493503565018" expanded="true" signature="5446:5510" ph="CREATE TABLE... missing_value" />
-            <marker date="1493503565018" expanded="true" signature="5587:5644" ph="INSERT INTO missing_value... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/employees.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1152">
-          <caret line="64" column="11" lean-forward="false" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#form#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -750,10 +714,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/tables.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Table.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        <state relative-caret-position="18">
+          <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding>
             <element signature="e#48#64#0" expanded="true" />
             <element signature="e#496#547#0" expanded="false" />
@@ -776,30 +752,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/__init__.py">
+    <entry file="file://$PROJECT_DIR$/Employee.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="378">
+          <caret line="169" column="28" lean-forward="false" selection-start-line="169" selection-start-column="28" selection-end-line="169" selection-end-column="28" />
+          <folding>
+            <marker date="1493503565018" expanded="true" signature="761:775" ph="SELECT * FRO... missing_value" />
+            <marker date="1493503565018" expanded="true" signature="2568:2588" ph="SELECT MAX(i... missing_value" />
+            <marker date="1493503565018" expanded="true" signature="2978:3032" ph="INSERT INTO missing_value... " />
+            <marker date="1493503565018" expanded="true" signature="3365:3389" ph="DELETE FROM " />
+            <marker date="1493503565018" expanded="true" signature="3675:3701" ph="SELECT * FRO... missing_value" />
+            <marker date="1493503565018" expanded="true" signature="4069:4091" ph="UPDATE {} SE... " />
+            <marker date="1493503565018" expanded="true" signature="4069:4131" ph="UPDATE {} SE... " />
+            <marker date="1493503565018" expanded="true" signature="4069:4132" ph="UPDATE missi... " />
+            <marker date="1493503565018" expanded="true" signature="4069:4134" ph="UPDATE {} SE... " />
+            <marker date="1493503565018" expanded="true" signature="5126:5137" ph="DROP TABLE m... " />
+            <marker date="1493503565018" expanded="true" signature="5126:5139" ph="DROP TABLE {... " />
+            <marker date="1493503565018" expanded="true" signature="5446:5510" ph="CREATE TABLE... missing_value" />
+            <marker date="1493503565018" expanded="true" signature="5587:5644" ph="INSERT INTO missing_value... " />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/tables.html">
+    <entry file="file://$PROJECT_DIR$/templates/employees.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+        <state relative-caret-position="144">
+          <caret line="64" column="11" lean-forward="false" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
           <folding>
-            <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#form#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/17kG6B2qnKQ.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Position.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#48#72#0" expanded="true" />
             <marker date="1493567355676" expanded="true" signature="709:723" ph="SELECT * FRO... missing_value" />
@@ -813,10 +806,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding>
+            <element signature="e#48#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Salary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        <state relative-caret-position="504">
+          <caret line="41" column="29" lean-forward="true" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
           <folding>
             <element signature="e#48#64#0" expanded="true" />
           </folding>
