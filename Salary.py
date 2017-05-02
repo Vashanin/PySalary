@@ -17,7 +17,7 @@ class Salary:
         7 : "July",
         8 : "August",
         9 : "September",
-        10 : "Octiber",
+        10 : "October",
         11 : "November",
         12 : "December"
     }
@@ -40,6 +40,7 @@ class Salary:
 
             salaries = []
 
+            # підраховуємо заробітні плати та формуємо відповідні структури даних
             for table in self.tables_info:
                 year = table["year"]
                 month = self.monthes[table["month"]]
@@ -95,6 +96,7 @@ class Salary:
         try:
             date_dictionary = {}
 
+            # переписуємо дані отримані з функції calculate_salary_for_all у відповідній формі, вказаній вище
             for item in raw_tuple:
                 year = item[0]
                 date_dictionary[year] = {}
@@ -129,6 +131,7 @@ class Salary:
 
             employee_dictionary = {}
 
+            # переписуємо дані отримані з функції calculate_salary_for_all у відповідній формі, вказаній вище
             for item in raw_tuple:
                 employee = item[2]
                 employee_dictionary[employee] = {}
@@ -153,7 +156,7 @@ class Salary:
                 employee_dictionary[employee][year][month]\
                     .append({"position" : position, "sum" : sum})
 
-            print(employee_dictionary)
+            print(employee_dictionary.keys())
 
             return employee_dictionary
         except Exception as e:
