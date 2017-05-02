@@ -28,11 +28,6 @@ class Salary:
         self.tables_info = Table().get_all_db_data()
 
     def calculate_salary_for_all(self):
-        """
-            responce format: 
-            1) (year, month, employeeId, position, money)
-            2) (employeeId, year, month, money)
-        """
         try:
             employee_wages = {}
             for position in self.positions_info:
@@ -52,6 +47,7 @@ class Salary:
                 current_employee = employees[employee_id]
 
                 employee_name = current_employee["name"]
+
                 position = current_employee["post"]
                 wage_per_hour = employee_wages[position]
                 employee_rate = current_employee["rate"]
@@ -134,28 +130,30 @@ class Salary:
             employee_dictionary = {}
 
             for item in raw_tuple:
-                employee = employees_info[item[2]]
+                employee = item[2]
                 employee_dictionary[employee] = {}
 
             for item in raw_tuple:
-                employee = employees_info[item[2]]
+                employee = item[2]
                 year = item[0]
                 employee_dictionary[employee][year] = {}
 
             for item in raw_tuple:
-                employee = employees_info[item[2]]
+                employee = item[2]
                 year = item[0]
                 month = item[1]
                 employee_dictionary[employee][year][month] = []
 
             for item in raw_tuple:
-                employee = employees_info[item[2]]
+                employee = item[2]
                 year = item[0]
                 month = item[1]
                 position = item[3]
                 sum = item[4]
                 employee_dictionary[employee][year][month]\
                     .append({"position" : position, "sum" : sum})
+
+            print(employee_dictionary)
 
             return employee_dictionary
         except Exception as e:
