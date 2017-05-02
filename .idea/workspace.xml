@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8172ef7e-bb8d-4570-ba71-2a85b6cc2b65" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Salary.py" afterPath="$PROJECT_DIR$/Salary.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/db/database.db" afterPath="$PROJECT_DIR$/templates/db/database.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/salaries.html" afterPath="$PROJECT_DIR$/templates/salaries.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Salary.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Salary.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Salary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+            <state relative-caret-position="504">
+              <caret line="164" column="0" lean-forward="true" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
               <folding>
                 <element signature="e#48#64#0" expanded="true" />
               </folding>
@@ -49,27 +47,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="salaries.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="salaries.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/salaries.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="150" column="10" lean-forward="true" selection-start-line="150" selection-start-column="10" selection-end-line="150" selection-end-column="10" />
-              <folding>
-                <marker date="1493765013224" expanded="false" signature="3149:3182" ph="..." />
-                <marker date="1493765013224" expanded="false" signature="3964:3983" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new-table.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/new-table.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="70" column="11" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="70" selection-end-column="11" />
-              <folding>
-                <element signature="n#style#0;n#div#3;n#form#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="422">
+              <caret line="126" column="1" lean-forward="false" selection-start-line="126" selection-start-column="1" selection-end-line="126" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -126,8 +109,8 @@
         <option value="$PROJECT_DIR$/templates/header.html" />
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/templates/new-table.html" />
-        <option value="$PROJECT_DIR$/templates/salaries.html" />
         <option value="$PROJECT_DIR$/Salary.py" />
+        <option value="$PROJECT_DIR$/templates/salaries.html" />
       </list>
     </option>
   </component>
@@ -726,10 +709,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Salary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="164" column="0" lean-forward="true" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+          <folding>
+            <element signature="e#48#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/new-table.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="70" column="11" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="70" selection-end-column="11" />
+        <state relative-caret-position="54">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#3;n#form#0;n#!!top" expanded="true" />
           </folding>
@@ -738,22 +731,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/salaries.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="150" column="10" lean-forward="true" selection-start-line="150" selection-start-column="10" selection-end-line="150" selection-end-column="10" />
-          <folding>
-            <marker date="1493765013224" expanded="false" signature="3149:3182" ph="..." />
-            <marker date="1493765013224" expanded="false" signature="3964:3983" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Salary.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-          <folding>
-            <element signature="e#48#64#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="422">
+          <caret line="126" column="1" lean-forward="false" selection-start-line="126" selection-start-column="1" selection-end-line="126" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
