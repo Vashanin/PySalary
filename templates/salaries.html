@@ -2,6 +2,117 @@
 
 {% block body %}
 
-    <p> Here must be salaries table </p>
+    {% if (error != None):%}
+        <div class="alert alert-danger" role="alert"> {{error}} </div>
+    {% endif %}
 
+    <div class="col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 col-xs-12">
+        <ul class="nav nav-tabs nav-justified">
+            {% for year in DATE_DICT.keys() %}
+            <li><a data-toggle="tab" href="#{{year}}"> {{year}} </a></li>
+            {% endfor %}
+        </ul>
+        <div class="tab-content">
+            {% for year in DATE_DICT.keys() %}
+            <div id="{{year}}" class="tab-pane fade">
+                <ul class="nav nav-tabs nav-justified">
+                    {% for month in DATE_DICT[year].keys() %}
+                    <li><a data-toggle="tab" href="#{{month}}{{year}}">
+                        {{month}}
+                    </a></li>
+                    {% endfor %}
+                </ul>
+                <div class="tab-content">
+                    {% for month in DATE_DICT[year].keys() %}
+                        <div id="{{month}}{{year}}" class="tab-pane fade">
+
+                            <div class="panel panel-default">
+                                <!-- Table -->
+                                <table class="table">
+                                    <thead>
+                                        <th> Employee </th>
+                                        <th> Position </th>
+                                        <th> Salary per month </th>
+                                    </thead>
+                                    <tbody>
+                                        {% for salary in DATE_DICT[year][month] %}
+                                        <tr>
+                                            <td> {{salary["employee"]}} </td>
+                                            <td> {{salary["position"]}} </td>
+                                            <td> {{salary["salary"]}} </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+<!--
+    <div class="col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 col-xs-12">
+        <ul class="nav nav-tabs nav-justified">
+            {% for employee in EMPLOYEE_DICT.keys() %}
+            <li><a data-toggle="tab" href="#{{employee}}"> {{employee}} </a></li>
+            {% endfor %}
+        </ul>
+        <div class="tab-content">
+            {% for employee in EMPLOYEE_DICT.keys() %}
+            <div id="{{year}}" class="tab-pane fade">
+                <ul class="nav nav-tabs nav-justified">
+                    {% for year in EMPLOYEE_DICT[employee].keys() %}
+                    <li><a data-toggle="tab" href="#{{employee}}{{year}}">
+                        {{year}}
+                    </a></li>
+                    {% endfor %}
+                </ul>
+                <div class="tab-content">
+                    {% for year in EMPLOYEE_DICT[employee].keys() %}
+                    <div id="{{employee}}{{year}}">
+                        <ul class="nav nav-tabs nav-justified">
+                            {% for month in EMPLOYEE_DICT[employee][year].keys() %}
+                            <li><a data-toggle="tab" href="#{{employee}}{{month}}{{year}}">
+                                {{month}}
+                            </a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+
+                        {% for month in EMPLOYEE_DICT[employee][year].keys() %}
+                        <div id="{{employee}}{{month}}{{year}}" class="tab-pane fade">
+
+                            <div class="panel panel-default">
+                                <table class="table">
+                                    <thead>
+                                        <th> Position </th>
+                                        <th> Salary </th>
+                                    </thead>
+                                    <tbody>
+                                        {% for salary in EMPLOYEE_DICT[employee][year][month]%}
+                                        <tr>
+                                            <td> salary["position"] </td>
+                                            <td> salary["sum"] </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+-->
 {% endblock%}

@@ -7,6 +7,21 @@ from Position import *
 from Table import *
 
 class Salary:
+    monthes = {
+        1 : "January",
+        2 : "February",
+        3 : "March",
+        4 : "April",
+        5 : "May",
+        6 : "June",
+        7 : "July",
+        8 : "August",
+        9 : "September",
+        10 : "Octiber",
+        11 : "November",
+        12 : "December"
+    }
+
     def __init__(self):
         self.employees_info = Employee().get_all_db_data()
         self.positions_info = Position().get_all_db_data()
@@ -32,9 +47,11 @@ class Salary:
 
             for table in self.tables_info:
                 year = table["year"]
-                month = table["month"]
+                month = self.monthes[table["month"]]
                 employee_id = table["employeeId"]
                 current_employee = employees[employee_id]
+
+                employee_name = current_employee["name"]
                 position = current_employee["post"]
                 wage_per_hour = employee_wages[position]
                 employee_rate = current_employee["rate"]
@@ -66,13 +83,13 @@ class Salary:
                 # зарплата за лікарняний
                 sum += amount_of_hospital_days * (sum_of_hours / amount_of_simple_days) * wage_per_hour
 
-                compiled_salary = (year, month, employee_id, position, sum)
+                compiled_salary = (year, month, employee_name, position, str(sum) + " $")
                 salaries.append(compiled_salary)
 
             return tuple(salaries)
         except Exception as e:
-            print("Trouble with calculate_salary_for_all: " + e.args[0])
             traceback.format_exc()
+            print("Trouble with calculate_salary_for_all: " + e.args[0])
 
     def represent_as_date_dictionary(self, raw_tuple):
         """
@@ -94,13 +111,15 @@ class Salary:
             for item in raw_tuple:
                 year = item[0]
                 month = item[1]
-                date_dictionary[year][month].append((item[2], item[3], item[4]))
+                date_dictionary[year][month]\
+                    .append({"employee" : item[2], "position" : item[3], "salary" : item[4]})
 
             return date_dictionary
 
         except Exception as e:
             print("Troubles with represent_as_employee_dictionary: " + e.args[0])
             traceback.format_exc()
+
 
     def represent_as_employee_dictionary(self, raw_tuple):
         """
@@ -135,9 +154,10 @@ class Salary:
                 month = item[1]
                 position = item[3]
                 sum = item[4]
-                employee_dictionary[employee][year][month].append((position, sum))
+                employee_dictionary[employee][year][month]\
+                    .append({"position" : position, "sum" : sum})
 
             return employee_dictionary
         except Exception as e:
-            print("Troubles with represent_as_employee_dictionary: " + e.args[0])
             traceback.format_exc()
+            print("Troubles with represent_as_employee_dictionary: " + e.args[0])
